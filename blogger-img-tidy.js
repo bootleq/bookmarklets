@@ -14,7 +14,7 @@ if ($textarea) {
   $textarea.value = $textarea.value.replace(re, function (str, p1, p2) {
     return [
       '<a href="', p1, '">',
-      '<img src="', p2, '" alt="" /></a>'
+      '<img src="', p2, '" alt="" /></a>\n'
     ].join('');
   });
 } else {
