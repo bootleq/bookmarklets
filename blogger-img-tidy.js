@@ -1,18 +1,20 @@
 var
   $textarea = document.getElementById('postingHtmlBox'),
   pattern = [
-    '(<div class="separator" style="clear: both; text-align: center;">\n)?',
+    '(?:<div class="separator" style="clear: both; text-align: center;">\n)?',
     '<a href="(.+)"',
-    ' imageanchor="1" style=".*"><img border="0" height=".+" width=".+" ',
-    'src="(.+)" /></a>(</div>)?'
+    ' imageanchor="1" (?:style=".*")?>',
+    '<img border="0" (?:height=".+" width=".+" )?',
+    'src="(.+)" /></a>',
+    '(?:</div>)?'
   ].join(''),
   re = new RegExp(pattern, 'g');
 
 if ($textarea) {
-  $textarea.value = $textarea.value.replace(re, function (str, p1, p2, p3, p4, p5) {
+  $textarea.value = $textarea.value.replace(re, function (str, p1, p2) {
     return [
-      '<a href="', p2, '">',
-      '<img src="', p3, '" alt="" /></a>'
+      '<a href="', p1, '">',
+      '<img src="', p2, '" alt="" /></a>'
     ].join('');
   });
 } else {
