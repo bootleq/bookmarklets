@@ -1,0 +1,1 @@
+WebDeveloper.Overlay.Cookies.deleteDomainCookies();
