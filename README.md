@@ -5,10 +5,10 @@
 
 ## 如何 compile
 
-可以用 [npm bookmarklets][] package
+可以用 [npm bookmarklet][] package
 
     yarn bookmarklet xxx.js
 
 
 
-[npm bookmarklets]: https://github.com/mrcoles/bookmarklet
+[npm bookmarklet]: https://github.com/mrcoles/bookmarklet
