@@ -1,0 +1,75 @@
+:root {
+  --bookmarklet-light-bg: rgb(253, 255, 223);
+}
+
+#_bookmarklet_control {
+  position: fixed;
+  bottom: 1vh;
+  left: 0;
+  padding: 4px 8px;
+  outline: 2px solid gold;
+  background-color: var(--bookmarklet-light-bg);
+  border-radius: 4px;
+}
+
+#_bookmarklet_control ul {
+  padding-left: 15px;
+  padding-top: 6px;
+  margin: 0;
+  max-height: 60vh;
+  max-width: 20vw;
+  overflow-y: auto;
+  display: none;
+}
+#_bookmarklet_control.opened ul {
+  display: block;
+}
+
+#_bookmarklet_control li {
+  display: flex;
+  justify-content: space-between;
+}
+#_bookmarklet_control li:hover {
+  background-color: #f0f9fe;
+}
+#_bookmarklet_control var {
+  transition: transform 0.3s ease-in;
+  display: inline-block;
+}
+#_bookmarklet_control var.changing {
+  animation: 0.3s bookmarkletCountIn;
+}
+@keyframes bookmarkletCountIn {
+  from {
+    transform: translate(1em, -3em) scale(12) skewY(30deg);
+  }
+  to {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+._bookmarklet_blacked {
+  height: 5em;
+  overflow: hidden;
+  background-color: white;
+}
+._bookmarklet_blacked > div {
+  opacity: 0.2;
+  filter: grayscale(1);
+}
+._bookmarklet_blacked button[data-action^='_bookmarklet_'] {
+  display: none;
+}
+
+span[data-action='_bookmarklet_toggle'] {
+  cursor: pointer;
+}
+button[data-action^='_bookmarklet_'] {
+  background-color: transparent;
+  margin-left: 4px;
+  border: none;
+}
+button[data-action^='_bookmarklet_']:hover {
+  background-color: var(--bookmarklet-light-bg);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
