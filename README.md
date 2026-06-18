@@ -5,10 +5,10 @@
 
 ## 如何 compile
 
-可以用 [npm bookmarklet][] package
+使用 fork 版本 [bookmarklet][bookmarklet fork]
 
-    yarn bookmarklet xxx.js
+    yarn bookmarklet xxx.js -m '{parse:{bare_returns:true},compress:false,mangle:false}' -c
 
 
 
-[npm bookmarklet]: https://github.com/mrcoles/bookmarklet
+[bookmarklet fork]: https://github.com/bootleq/bookmarklet

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "bookmarklet": "github:bootleq/bookmarklet"
+  },
+  "packageManager": "yarn@4.17.0"
+}
