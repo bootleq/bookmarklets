@@ -7,7 +7,7 @@
 // ==/Bookmarklet==
 
 const storageKey = '_bookmarklet_blacklist';
-const listContainer = document.querySelector('.mate-list__main');
+const listContainer = document.querySelector('.my104-container-sidebar__main > div:nth-child(2) > div');
 const blacklist = JSON.parse(localStorage.getItem(storageKey) || '[]');
 
 const delBtn = (() => {
